@@ -1,0 +1,2440 @@
+ERROR 2026-07-06 21:59:49,960 log 2420 14572 Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: users_user.phone
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\contrib\admin\sites.py", line 449, in login
+    return LoginView.as_view(**defaults)(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\contrib\auth\views.py", line 89, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\generic\edit.py", line 150, in post
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\forms\forms.py", line 206, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\forms\forms.py", line 201, in errors
+    self.full_clean()
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\forms\forms.py", line 338, in full_clean
+    self._clean_form()
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\forms\forms.py", line 354, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\contrib\auth\forms.py", line 366, in clean
+    self.user_cache = authenticate(
+                      ^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\debug.py", line 75, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\contrib\auth\__init__.py", line 114, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\contrib\auth\backends.py", line 65, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\contrib\auth\base_user.py", line 37, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\query.py", line 631, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\query.py", line 368, in __len__
+    self._fetch_all()
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\query.py", line 1954, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\query.py", line 93, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: users_user.phone
+ERROR 2026-07-06 21:59:49,977 basehttp 2420 14572 "POST /admin/login/?next=/admin/ HTTP/1.1" 500 269046
+ERROR 2026-07-06 23:37:39,257 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-06 23:37:39,292 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22105
+ERROR 2026-07-06 23:37:40,367 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-06 23:37:40,374 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22105
+ERROR 2026-07-06 23:37:58,883 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-06 23:37:58,883 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22105
+ERROR 2026-07-06 23:37:59,966 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-06 23:37:59,966 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22105
+ERROR 2026-07-06 23:40:16,900 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-06 23:40:16,900 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22105
+ERROR 2026-07-06 23:40:17,957 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-06 23:40:17,957 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22105
+ERROR 2026-07-06 23:42:46,514 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-06 23:42:46,521 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22105
+ERROR 2026-07-06 23:42:47,590 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-06 23:42:47,590 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22105
+ERROR 2026-07-07 03:01:30,741 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-07 03:01:30,767 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22185
+ERROR 2026-07-07 03:01:31,838 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-07 03:01:31,838 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22185
+ERROR 2026-07-07 03:07:15,343 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-07 03:07:15,344 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22185
+ERROR 2026-07-07 03:10:21,527 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-07 03:10:21,528 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22185
+ERROR 2026-07-07 03:10:23,217 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-07 03:10:23,218 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22185
+ERROR 2026-07-07 03:10:24,294 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-07 03:10:24,294 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22185
+ERROR 2026-07-07 03:12:38,896 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-07 03:12:38,898 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22185
+ERROR 2026-07-07 03:12:39,965 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-07 03:12:39,965 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 22185
+ERROR 2026-07-07 03:13:43,811 log Internal Server Error: /api/users/photographers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\users\views.py", line 226, in photographers
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 552, in to_representation
+    ret[field.field_name] = field.to_representation(attribute)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 1928, in to_representation
+    method = getattr(self.parent, self.method_name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UserDetailSerializer' object has no attribute 'get_bookings_count'
+ERROR 2026-07-07 03:13:43,811 basehttp "GET /api/users/photographers/ HTTP/1.1" 500 158428
+ERROR 2026-07-07 03:16:43,071 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:16:43,071 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:16:44,166 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:16:44,170 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:16:53,316 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:16:53,318 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:16:54,393 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:16:54,393 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:17:01,918 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:17:01,920 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:17:03,022 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:17:03,033 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:17:04,969 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:17:04,981 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:17:06,071 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:17:06,073 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:17:18,869 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:17:18,869 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:17:19,968 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:17:19,970 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:17:23,995 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:17:24,000 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:17:25,085 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:17:25,097 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:19:09,602 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:19:09,608 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:19:10,702 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:19:10,704 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:19:26,036 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:19:26,036 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:19:27,140 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:19:27,148 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:20:38,246 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:20:38,248 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:20:39,312 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:20:39,313 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:20:43,464 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:20:43,476 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:20:44,564 log Internal Server Error: /api/bookings/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 43, in list
+    return self.get_paginated_response(serializer.data)
+                                       ^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 809, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 727, in to_representation
+    return [
+           ^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 728, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 537, in to_representation
+    for field in fields:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 398, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 387, in fields
+    fields[key] = value
+    ~~~~~~^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\utils\serializer_helpers.py", line 165, in __setitem__
+    field.bind(field_name=key, parent=self.serializer)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\fields.py", line 358, in bind
+    assert self.source != field_name, (
+AssertionError: It is redundant to specify `source='status_display'` on field 'CharField' in serializer 'BookingListSerializer', because it is the same as the field name. Remove the `source` keyword argument.
+ERROR 2026-07-07 03:20:44,570 basehttp "GET /api/bookings/ HTTP/1.1" 500 23157
+ERROR 2026-07-07 03:55:35,688 basehttp "POST /api/customers/ HTTP/1.1" 500 22449
+ERROR 2026-07-07 03:55:43,705 basehttp "POST /api/customers/ HTTP/1.1" 500 22449
+ERROR 2026-07-07 03:56:16,711 basehttp "POST /api/customers/ HTTP/1.1" 500 22449
+ERROR 2026-07-07 03:57:40,450 basehttp "POST /api/customers/ HTTP/1.1" 500 22449
+ERROR 2026-07-07 03:59:43,788 log Internal Server Error: /api/customers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: customers_customer.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\back-end-python\Studio\customers\views.py", line 88, in perform_create
+    serializer.save(created_by=self.request.user)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 1011, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\back-end-python\Studio\customers\models.py", line 419, in save
+    super().save(*args, **kwargs)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: UNIQUE constraint failed: customers_customer.email
+ERROR 2026-07-07 03:59:43,795 basehttp "POST /api/customers/ HTTP/1.1" 500 25344
+ERROR 2026-07-07 04:00:21,144 log Internal Server Error: /api/customers/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: UNIQUE constraint failed: customers_customer.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\back-end-python\Studio\customers\views.py", line 88, in perform_create
+    serializer.save(created_by=self.request.user)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 210, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\serializers.py", line 1011, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\query.py", line 665, in create
+    obj.save(force_insert=True, using=self.db)
+  File "D:\back-end-python\Studio\customers\models.py", line 419, in save
+    super().save(*args, **kwargs)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\query.py", line 1873, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: UNIQUE constraint failed: customers_customer.email
+ERROR 2026-07-07 04:00:21,147 basehttp "POST /api/customers/ HTTP/1.1" 500 25345
+ERROR 2026-07-07 04:05:24,514 log Internal Server Error: /api/reports/reports/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\utils\functional.py", line 32, in __call__
+    return self.__value__
+           ^^^^^^^^^^^^^^
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 474, in _reraise_as_library_errors
+    yield
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 461, in _ensure_connection
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 941, in _connection_factory
+    self._connection = self._establish_connection()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 863, in _establish_connection
+    conn = self.transport.establish_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\transport\pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\amqp\connection.py", line 324, in connect
+    self.transport.connect()
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\amqp\transport.py", line 132, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\amqp\transport.py", line 187, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\back-end-python\Studio\reports\views.py", line 69, in perform_create
+    generate_report_task.delay(report.id)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\celery\app\task.py", line 463, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\celery\app\task.py", line 627, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\celery\app\base.py", line 969, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\celery\app\amqp.py", line 559, in send_task_message
+    ret = producer.publish(
+          ^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\messaging.py", line 190, in publish
+    return _publish(
+           ^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 558, in _ensured
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\messaging.py", line 200, in _publish
+    channel = self.channel
+              ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\messaging.py", line 224, in _get_channel
+    channel = self._channel = channel()
+                              ^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\utils\functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+                             ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\messaging.py", line 240, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 960, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 460, in _ensure_connection
+    with ctx():
+  File "C:\Users\FAGR\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 478, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [WinError 10061] No connection could be made because the target machine actively refused it
+ERROR 2026-07-07 04:05:24,530 basehttp "POST /api/reports/reports/ HTTP/1.1" 500 25737
+ERROR 2026-07-08 12:12:51,731 log Internal Server Error: /api/reports/reports/
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\utils\functional.py", line 32, in __call__
+    return self.__value__
+           ^^^^^^^^^^^^^^
+AttributeError: 'ChannelPromise' object has no attribute '__value__'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 474, in _reraise_as_library_errors
+    yield
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 461, in _ensure_connection
+    return retry_over_time(
+           ^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\utils\functional.py", line 318, in retry_over_time
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 941, in _connection_factory
+    self._connection = self._establish_connection()
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 863, in _establish_connection
+    conn = self.transport.establish_connection()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\transport\pyamqp.py", line 203, in establish_connection
+    conn.connect()
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\amqp\connection.py", line 324, in connect
+    self.transport.connect()
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\amqp\transport.py", line 132, in connect
+    self._connect(self.host, self.port, self.connect_timeout)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\amqp\transport.py", line 187, in _connect
+    self.sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\viewsets.py", line 125, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "D:\back-end-python\Studio\reports\views.py", line 69, in perform_create
+    generate_report_task.delay(report.id)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\celery\app\task.py", line 463, in delay
+    return self.apply_async(args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\celery\app\task.py", line 627, in apply_async
+    return app.send_task(
+           ^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\celery\app\base.py", line 969, in send_task
+    amqp.send_task_message(P, name, message, **options)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\celery\app\amqp.py", line 559, in send_task_message
+    ret = producer.publish(
+          ^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\messaging.py", line 190, in publish
+    return _publish(
+           ^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 558, in _ensured
+    return fun(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\messaging.py", line 200, in _publish
+    channel = self.channel
+              ^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\messaging.py", line 224, in _get_channel
+    channel = self._channel = channel()
+                              ^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\utils\functional.py", line 34, in __call__
+    value = self.__value__ = self.__contract__()
+                             ^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\messaging.py", line 240, in <lambda>
+    channel = ChannelPromise(lambda: connection.default_channel)
+                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 960, in default_channel
+    self._ensure_connection(**conn_opts)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 460, in _ensure_connection
+    with ctx():
+  File "C:\Users\FAGR\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "D:\back-end-python\Studio\venv\Lib\site-packages\kombu\connection.py", line 478, in _reraise_as_library_errors
+    raise ConnectionError(str(exc)) from exc
+kombu.exceptions.OperationalError: [WinError 10061] No connection could be made because the target machine actively refused it
+ERROR 2026-07-08 12:12:51,757 basehttp "POST /api/reports/reports/ HTTP/1.1" 500 25737
